@@ -1,0 +1,31 @@
+.seat{
+    height: 40px;
+    width: 80px;
+    margin: 3px;
+}
+.reserved{
+    height: 40px;
+    width: 80px;
+    margin: 3px;
+    background-color: red;
+}
+.selected {
+    height: 40px;
+    width: 80px;
+    margin: 3px;
+    background-color: yellow;
+}
+.Table
+{
+    margin: 25px auto;
+    display: table;
+    text-align: center;
+}
+.Row
+{
+    display: table-row;
+}
+.Cell
+{
+    display: table-cell;
+}

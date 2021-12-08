@@ -1,0 +1,38 @@
+html {
+   height: 100%;
+   box-sizing: border-box;
+ }
+ 
+ *,
+ *:before,
+ *:after {
+   box-sizing: inherit;
+ }
+ 
+ body {
+   position: relative;
+   margin: 0;
+   padding-bottom: 3rem;
+   min-height: 100%;
+   font-family: 'Inter', sans-serif;
+   background-color: #f2f4f5
+ }
+footer {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   padding: 1rem;
+   background-color: #efefef;
+   text-align: center;
+   background:#222;
+   color: white;
+
+}
+.footer{
+   margin:0 auto;
+   width: 1200px;
+   text-align: right;
+}
+
+
