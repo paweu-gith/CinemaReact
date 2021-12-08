@@ -64,7 +64,6 @@ const SeatsButtons = (props) => {
           seat: seat
         })
           .then(response => {
-
             if(index === selectedSeats.length-1){
               sendEmail(order);
             }
@@ -87,7 +86,6 @@ const SeatsButtons = (props) => {
             alert("Nie udało się wykonać operacji");
             history.push("/");
         });
-
     }
 
     return (
