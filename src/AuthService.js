@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiPath = "http://localhost:8080/api/auth/";
+const apiPath = "https://springboot-cinema.herokuapp.com/api/auth/";
 
 class AuthService {
   login(email, password) {

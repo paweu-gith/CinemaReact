@@ -3,7 +3,7 @@ import "./table.css";
 import dateFormat from "dateformat";
 import { withRouter } from "react-router-dom";
 
-const apiPath = "http://localhost:8080/api";
+const apiPath = "https://springboot-cinema.herokuapp.com/api";
 
 class Table1 extends React.Component {
     constructor(props) {

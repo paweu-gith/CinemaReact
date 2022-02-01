@@ -3,7 +3,7 @@ import dateFormat from "dateformat";
 import AuthService from "../../AuthService";
 import Select from 'react-select'
 const axios = require('axios');
-const apiPath = "http://localhost:8080/api";
+const apiPath = "https://springboot-cinema.herokuapp.com/api";
 
 export default class Screenings extends Component {
   constructor(props) {

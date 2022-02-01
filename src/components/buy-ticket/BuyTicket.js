@@ -3,7 +3,7 @@ import dateFormat from "dateformat";
 import SeatsButtons from "./SeatsButtons";
 import "./BuyTicket.css";
 import AuthService from "../../AuthService";
-const apiPath = "http://localhost:8080/api";
+const apiPath = "https://springboot-cinema.herokuapp.com/api";
 
 export default class BuyTicket extends Component {
   constructor(props) {
