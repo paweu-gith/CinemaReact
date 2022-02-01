@@ -106,13 +106,11 @@ export default class SignUp extends Component {
                         <br/><br/>
                         <button type="submit">Zarejestruj</button>
                         </form>
-                    </td>
+                  </td>
                 </tr>
-                </tbody>
-            </table>
-            
-
-        </div>
+              </tbody>
+          </table>
+      </div>
     );
   }
 }

@@ -1,24 +1,23 @@
 import React from 'react';
-import Navbar from './navbar/NavBar';
+import Navbar from './components/navbar/NavBar';
 import AuthService from "./AuthService.js";
 
 //import Navbar from './navbar';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-
+import {withRouter} from 'react-router-dom';
 import "./App.css";
 import Home from './components';
 import About from './components/about';
 import OrderedTickets from './components/ordered-tickets';
 import SignIn from './components/sign-in/SignInMain';
-import BuyTicket from "./components/BuyTicket";
-import OrderSummary from "./components/OrderSummary";
+import BuyTicket from "./components/buy-ticket/BuyTicket";
+import OrderSummary from "./components/buy-ticket/OrderSummary";
 import Movies from './components/admin-board/Movies';
 import Screenings from './components/admin-board/Screenings';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       data: [],
       loggedInStatus: false,
@@ -31,14 +30,10 @@ class App extends React.Component {
 
   componentDidMount() {
     const user = AuthService.getCurrentUser();
-
     if (user) {
-      this.setState({
-        currentUser: user,
-      });
+      this.setState({ currentUser: user });
     }
   }
-
   handleLogout(logOut) {
     if(logOut === true){
       AuthService.logout();
@@ -51,17 +46,17 @@ class App extends React.Component {
 
   handleLogin() {
     window.location.reload(false);
+
   }
 
   render() {
     return (
-      <Router >
+    <Router >
       <Navbar currentUser={this.state.currentUser} handleLogout={this.handleLogout} />
       <div class="main">
         { 
           (this.state.currentUser) &&
-          <span>Zalogowany użytkonik: <strong>{this.state.currentUser.email}</strong></span>
-        
+          <span>Zalogowany użytkownik: <strong>{this.state.currentUser.email}</strong></span>
         }
         <Switch>
           <Route path='/' exact component={Home} />
@@ -76,11 +71,7 @@ class App extends React.Component {
           <Route path="/screenings" component={Screenings} />
         </Switch>
       </div>
-
-
-
     </Router>
-    
     );
   }
 }

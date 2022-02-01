@@ -1,4 +1,4 @@
-import Table from '../table/table';
+import Table from './table/table';
 import React, {useState} from 'react';
 
 const axios = require('axios');

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import dateFormat from "dateformat";
 import { useHistory } from "react-router";
 import moment from "moment";
-import AuthService from "../AuthService";
+import AuthService from "../../AuthService";
 const axios = require('axios');
 const apiPath = "http://localhost:8080/api";
 

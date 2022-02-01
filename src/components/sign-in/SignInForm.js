@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./sign-in.css";
 import { Redirect } from 'react-router'
 import AuthService from "../../AuthService.js";
+import {withRouter} from 'react-router-dom';
 import 'reactjs-popup/dist/index.css';
 
 export default class SignInForm extends Component {

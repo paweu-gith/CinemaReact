@@ -12,6 +12,7 @@ class Table1 extends React.Component {
         screenings: [],
         isLoading: false,
         isError: false,
+        rowStyle:"test",
         image: undefined,
 
         selectedScreening: undefined
@@ -48,22 +49,36 @@ buyTicket(screening){
               moviePoster = image.picByte;
           })
 
+          if(this.state.rowStyle === "test")
+            this.state.rowStyle = "test2";
+          else
+            this.state.rowStyle = "test";
+
           return (
-            <tr key={screening.id}>
-              <td>{moviePoster ? <img img width="120" height="160"  src={`data:image/png;base64,${moviePoster}`}/>: ''}</td>
+            <React.Fragment>
+            <tr className={this.state.rowStyle} key={screening.id}>
+              <td rowSpan="2">{moviePoster ? <img img width="120" height="179"  src={`data:image/png;base64,${moviePoster}`}/>: ''}</td>
               <td>{screening.movie.title}</td>
               <td>{dateFormat(screening.date, "yyyy-mm-dd")}</td>
               <td>{dateFormat(screening.date, "hh:MM")}</td>
               <td>{screening.movie.ticketPrice}</td>
-              <td>            	
+              
+              <td rowSpan="2">            	
                 <form>
 			            <input type='button' onClick={() => this.buyTicket(screening)} value='Kup bilet' />
 					        <input type='hidden' name='id' value={screening} />
 				        </form>
               </td>
             </tr>
+            <tr className={this.state.rowStyle} >
+              <td colSpan="4" style={{textAlign: 'justify'}}>{screening.movie.description} </td>
+            </tr>
+            </React.Fragment>
+
           )
-        })
+        }
+        
+        )
     }
 
     render() {
@@ -92,8 +107,9 @@ buyTicket(screening){
                 </tr>
               </thead>
               <tbody>
-                {this.renderTableRows()}
+                {this.renderTableRows()}             
               </tbody>
+
             </table>
           ) : (
             <div>

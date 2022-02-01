@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import dateFormat from "dateformat";
 import SeatsButtons from "./SeatsButtons";
 import "./BuyTicket.css";
-import AuthService from "../AuthService";
+import AuthService from "../../AuthService";
 const apiPath = "http://localhost:8080/api";
 
 export default class BuyTicket extends Component {

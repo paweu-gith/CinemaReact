@@ -11,6 +11,7 @@ export default class Movies extends Component {
     this.state = {
       movieTitle: "",
       ticketPrice: "",
+      movieDescription: "",
       moviePoster: undefined,
 
       movies: [],
@@ -72,7 +73,8 @@ export default class Movies extends Component {
   async addMovie(event){
     axios.post(apiPath+'/movies/', {
       title: this.state.movieTitle,
-      ticketPrice: this.state.ticketPrice
+      ticketPrice: this.state.ticketPrice,
+      description: this.state.movieDescription
     })
       .then(response => {
         alert("Dodano nowy film");
@@ -154,7 +156,7 @@ export default class Movies extends Component {
                   <th>Opcje</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="normalTable">
                 {this.renderTableRows()}
               </tbody>
             </table>
@@ -198,6 +200,16 @@ export default class Movies extends Component {
                     name="ticketPrice"
                     placeholder="Cena biletu"
                     value={this.state.ticketPrice}
+                    onChange={this.handleChange}
+                    required
+                  />
+                  <br/><br/>
+                  Opis filmu:<br />
+                  <input
+                    type="text"
+                    name="movieDescription"
+                    placeholder="Opis filmu"
+                    value={this.state.movieDescription}
                     onChange={this.handleChange}
                     required
                   />

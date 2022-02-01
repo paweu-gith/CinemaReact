@@ -63,7 +63,7 @@ export default class BuyTicket extends Component {
         }
           
       })
-
+      console.log(orderedSeat);
       return (
         <tr key={order.id}>
           <td>{orderedSeat.screening.movie.title}</td>
@@ -110,7 +110,7 @@ export default class BuyTicket extends Component {
       </div>
     ) : (
       <div>
-              No users.
+              Brak zamówionych biletów.
         </div>
     )
   }

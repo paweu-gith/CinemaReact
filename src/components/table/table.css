@@ -26,8 +26,17 @@ tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
-tbody tr:nth-of-type(even) {
+.test {
     background-color: #e9e9e9;
+}
+.test2 {
+    background-color: white;
+}
+.normalTable tr:nth-child(even) {
+    background-color: #e9e9e9;
+}
+.normalTable tr:nth-child(odd) {
+    background-color: white;
 }
 
 tbody tr:last-of-type {

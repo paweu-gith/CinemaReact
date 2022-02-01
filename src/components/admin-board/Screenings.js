@@ -75,7 +75,7 @@ export default class Screenings extends Component {
       "value" : d.id,
       "label" : d.hallName
     }))
-
+    console.log(options2);
     this.setState({selectMovieOptions: options, selectHallOptions: options2})
 
   }
@@ -90,7 +90,7 @@ export default class Screenings extends Component {
       })
     .catch(error => {
         this.setState({ isLoading: false, isError: true })
-        console.log(error)
+        console.log(error);
     });
   }
   
@@ -100,15 +100,13 @@ export default class Screenings extends Component {
       this.props.history.push({pathname: "/"})
     }
     else if(AuthService.getCurrentUser().roles.some(role => role === "ROLE_ADMIN")){
-      this.getScreenings();
       this.getOptions();
-      
+      this.getScreenings();
     }
     else{
       alert("Brak uprawnień");
       this.props.history.push({pathname: "/"})
     }
-
   }
 
 
@@ -133,11 +131,8 @@ export default class Screenings extends Component {
       })
       .catch(error => {
           alert("Nie udało się wykonać operacji");
-         
           console.log(error)
       });
-
-
   }
 
   async deleteMovie(screening){
@@ -151,7 +146,6 @@ export default class Screenings extends Component {
 
     }
   }
-
 
   renderTableRows = () => {
     return this.state.screenings.map(screening => {
@@ -193,7 +187,7 @@ export default class Screenings extends Component {
                   <th>Opcje</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="normalTable">
                 {this.renderTableRows()}
               </tbody>
             </table>
