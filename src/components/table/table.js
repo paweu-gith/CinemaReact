@@ -91,11 +91,11 @@ buyTicket(screening){
         const { screenings: users, isLoading, isError } = this.state
     
         if (isLoading) {
-          return <div>Loading...</div>
+          return <div>Ładowanie...</div>
         }
     
         if (isError) {
-          return <div>Error</div>
+          return <div>Przepraszamy wystąpł błąd</div>
         }
     
         return users.length > 0
