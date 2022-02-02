@@ -2,7 +2,7 @@ import React from 'react';
 import "./table.css";
 import dateFormat from "dateformat";
 import { withRouter } from "react-router-dom";
-
+const axios = require('axios');
 const apiPath = "https://springboot-cinema.herokuapp.com/api";
 
 class Table1 extends React.Component {
@@ -26,16 +26,21 @@ buyTicket(screening){
     async componentDidMount() {
       this.setState({redirect: false, selectedScreening: undefined});
         this.setState({ isLoading: true })
-        const response = await fetch(apiPath+'/screenings')
-        const response2 = await fetch(apiPath+'/image/get')
-        if (response.ok && response2.ok) {
-          const screenings = await response.json()
-          const image = await response2.json()
+        let screenings = null;
 
-          this.setState({ screenings, image, isLoading: false })
-        } else {
-          this.setState({ isError: true, isLoading: false })
-        }
+        let image = null;
+        const requestOne = axios.get(apiPath+'/screenings');
+        const requestTwo = axios.get(apiPath+'/image/get');
+
+        await axios.all([requestOne, requestTwo]).then(axios.spread(function(res1, res2) {
+          screenings = res1.data
+          image = res2.data
+        }))
+        .catch(error => {
+          this.setState({ isLoading: false, isError: true })
+          console.log(error)
+      });
+      this.setState({ screenings, image, isLoading: false })
 
         this.setState({redirect: false, selectedScreening: undefined});
     }
