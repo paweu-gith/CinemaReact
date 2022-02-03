@@ -24,7 +24,7 @@ export default class BuyTicket extends Component {
 
   async componentDidMount() {
     if(AuthService.getCurrentUser() === null){
-      alert("Kupić bilet może jedyni zalogowany użytkownik");
+      alert("Kupić bilet może jedynie zalogowany użytkownik");
       this.props.history.push({pathname: "/"})
     }
 
