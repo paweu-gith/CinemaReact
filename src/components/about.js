@@ -11,7 +11,8 @@ const About = () => {
     >
       
       <h1>Informacje</h1>
-      <p>Aplikacja wykonana w ramach pracy dyplomowej. Treść strony jest tylko demonstracyjna.<br /><br />
+      <p>Aplikacja wykonana w ramach pracy dyplomowej. Zadaniem aplikacji jest umożliwienie zakupu biletu na seans kinowy.<br/>
+      Treść strony jest tylko demonstracyjna. Źródłem plakatów jest strona https://www.filmweb.pl/ <br /><br />
       
       Autor: Paweł Gielej,<br />
       Grupa: 42INF-ISM-SP,<br />
