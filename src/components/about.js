@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div
       style={{
-
+        textAlign: 'right',
     padding:"10px",
     paddingBottom:"60px"   
       }}
