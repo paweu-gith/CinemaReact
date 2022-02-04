@@ -10,7 +10,13 @@ const About = () => {
       }}
     >
       
-      <h1>About</h1>
+      <h1>Informacje</h1>
+      <p>Aplikacja wykonana w ramach pracy dyplomowej. Treść strony jest tylko demonstracyjna.<br /><br />
+      
+      Autor: Paweł Gielej,<br />
+      Grupa: 42INF-ISM-SP,<br />
+      Nr. indeksu: 98855
+      </p>
     </div>
   );
 };
